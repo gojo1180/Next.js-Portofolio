@@ -6,6 +6,7 @@ import BlurText from "./components/BlurText/BlurText";
 import Particles from "./components/Particles/Particles";
 import ScrollFloat from "./components/ScrollFloat/ScrollFloat";
 import AnimatedContent from "./components/AnimatedContent/AnimatedContent";
+import GlassIcons from "./components/GlassIcons/GlassIcons";
 import { div } from "framer-motion/client";
 
 
@@ -215,9 +216,28 @@ export default function Home() {
             Skills
           </ScrollFloat>
         </div>
+        <div style={{ height: '600px', position: 'relative' }}>
+          <GlassIcons items={items} className="custom-class" />
+        </div>
       </div>
-
     </div>
 
   );
+  
 }
+
+import {
+  SiHtml5,
+  SiCss3,
+  SiJavascript,
+  SiPython,
+  SiVuedotjs,
+} from 'react-icons/si';
+
+const items = [
+  { icon: <SiHtml5 />, color: 'orange', label: 'HTML' },
+  { icon: <SiCss3 />, color: 'blue', label: 'CSS' },
+  { icon: <SiJavascript />, color: 'yellow', label: 'JavaScript' },
+  { icon: <SiPython />, color: 'indigo', label: 'Python' },
+  { icon: <SiVuedotjs />, color: 'green', label: 'Vue.js' },
+];
