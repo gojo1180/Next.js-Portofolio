@@ -1,0 +1,23 @@
+
+.welcome{
+  color: rgb(45, 112, 56);
+  font-size: 30px;
+  font-family: 'Times New Roman', Times, serif;
+  margin: 0px 0px 0px;
+  margin-left: 50px;
+}
+
+.navbar-custom{
+    background-color: bisque;
+    background-size: 60px;
+}
+
+.container-fluid{
+    margin: 10px;
+    align-content: center;
+}
+
+.collapse {
+    position: absolute;
+    right: 20%;
+}
