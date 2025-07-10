@@ -7,6 +7,7 @@ import Particles from "./components/Particles/Particles";
 import ScrollFloat from "./components/ScrollFloat/ScrollFloat";
 import AnimatedContent from "./components/AnimatedContent/AnimatedContent";
 import GlassIcons from "./components/GlassIcons/GlassIcons";
+import InfiniteScroll from "./components/InfiniteScroll/InfiniteScroll";
 import { div } from "framer-motion/client";
 
 
@@ -216,14 +217,65 @@ export default function Home() {
             Skills
           </ScrollFloat>
         </div>
-        <div style={{ height: '600px', position: 'relative' }}>
-          <GlassIcons items={items} className="custom-class" />
+
+        <AnimatedContent
+          distance={150}
+          direction="horizontal"
+          reverse={false}
+          duration={2.2}
+          initialOpacity={0.2}
+          animateOpacity
+          scale={1.1}
+          threshold={0.2}
+          delay={0.3}
+        >
+        <div className="flex items-center justify-center min-h-[60vh] w-full px-4">
+          <div className="w-full max-w-5xl flex justify-center">
+            <GlassIcons items={items} className="flex flex-items gap-4" />
+          </div>
+        </div>
+          
+        </AnimatedContent>
+
+      </div>
+
+      <div className="container mx-auto min-h-screen px-4 py-10">
+        <div id="contact">
+        <ScrollFloat
+          animationDuration={1.2}
+          ease="back.inOut(2)"
+          scrollStart="top bottom"
+          scrollEnd="center center"
+          stagger={0.05}
+          textClassName="font-bold text-4xl text-[#343A40]"
+        >
+          contact us
+        </ScrollFloat>
+        </div>
+        <div style={{ height: '500px', position: 'relative' }}>
+          <InfiniteScroll
+            items={itemss}
+            isTilted={true}
+            tiltDirection="left"
+            autoplay={true}
+            autoplaySpeed={1.1}
+            autoplayDirection="down"
+            pauseOnHover={true}
+          />
         </div>
       </div>
+
+      <footer className="bg-white/10 backdrop-blur-md border-t border-white/20 text-[#343A40] py-4 mt-20">
+        <div className="max-w-7xl mx-auto px-4 text-center text-sm">
+          &copy; {new Date().getFullYear()} Venu Wicaksono. All rights reserved.
+        </div>
+      </footer>
+
+
     </div>
 
   );
-  
+
 }
 
 import {
@@ -232,12 +284,103 @@ import {
   SiJavascript,
   SiPython,
   SiVuedotjs,
+  SiTailwindcss,
+  SiSupabase,
+  SiBootstrap,
 } from 'react-icons/si';
+import { FaJava } from 'react-icons/fa';
 
 const items = [
-  { icon: <SiHtml5 />, color: 'orange', label: 'HTML' },
-  { icon: <SiCss3 />, color: 'blue', label: 'CSS' },
-  { icon: <SiJavascript />, color: 'yellow', label: 'JavaScript' },
-  { icon: <SiPython />, color: 'indigo', label: 'Python' },
-  { icon: <SiVuedotjs />, color: 'green', label: 'Vue.js' },
+  { icon: <SiHtml5 />, color: 'gray', label: 'HTML' },
+  { icon: <SiCss3 />, color: 'gray', label: 'CSS' },
+  { icon: <SiJavascript />, color: 'gray', label: 'JavaScript' },
+  { icon: <SiPython />, color: 'gray', label: 'Python' },
+  { icon: <SiVuedotjs />, color: 'gray', label: 'Vue.js' },
+  { icon: <SiTailwindcss />, color: 'gray', label: 'Tailwind CSS' },
+  { icon: <FaJava />, color: 'gray', label: 'Java' },
+  { icon: <SiSupabase />, color: 'gray', label: 'Supabase' },
+  { icon: <SiBootstrap />, color: 'gray', label: 'Bootstrap' },
 ];
+
+
+import { FiGithub, FiMail } from "react-icons/fi";
+import { FaLinkedin } from "react-icons/fa";
+
+const itemss = [
+  {
+    content: (
+      <div className="bg-white/20 backdrop-blur-md rounded-lg px-6 py-4 shadow-md text-center space-y-2">
+        <div className="flex justify-center items-center gap-2 text-[#0077b5]">
+          <FaLinkedin size={24} />
+          <h3 className="text-xl font-semibold text-[#343A40]">LinkedIn</h3>
+        </div>
+        <a
+          href="https://www.linkedin.com/in/your-linkedin-id"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[#0077b5] hover:underline"
+        >
+          linkedin.com/in/your-linkedin-id
+        </a>
+      </div>
+    ),
+  },
+  {
+    content: (
+      <div className="bg-white/20 backdrop-blur-md rounded-lg px-6 py-4 shadow-md text-center space-y-2">
+        <div className="flex justify-center items-center gap-2 text-[#333]">
+          <FiGithub size={24} />
+          <h3 className="text-xl font-semibold text-[#343A40]">GitHub</h3>
+        </div>
+        <a
+          href="https://github.com/your-github-username"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[#333] hover:underline"
+        >
+          github.com/your-github-username
+        </a>
+      </div>
+    ),
+  },
+  {
+    content: (
+      <div className="bg-white/20 backdrop-blur-md rounded-lg px-6 py-4 shadow-md text-center space-y-2">
+        <div className="flex justify-center items-center gap-2 text-[#c71610]">
+          <FiMail size={24} />
+          <h3 className="text-xl font-semibold text-[#343A40]">Email</h3>
+        </div>
+        <a
+          href="mailto:yourname@example.com"
+          className="text-[#c71610] hover:underline"
+        >
+          yourname@example.com
+        </a>
+      </div>
+    ),
+  },
+
+  // Info tambahan dengan styling card abu dan teks gelap
+  {
+    content: (
+      <div className="bg-white/20 backdrop-blur-md text-[#495057] rounded-lg px-6 py-4 shadow-md text-center">
+        Scroll to discover more...
+      </div>
+    ),
+  },
+  {
+    content: (
+      <div className="bg-white/20 backdrop-blur-md text-[#495057] rounded-lg px-6 py-4 shadow-md text-center">
+        Thanks for connecting!
+      </div>
+    ),
+  },
+  {
+    content: (
+      <div className="bg-white/20 backdrop-blur-md text-[#495057] rounded-lg px-6 py-4 shadow-md text-center">
+        Let's build something great.
+      </div>
+    ),
+  },
+];
+
