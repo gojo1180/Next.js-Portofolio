@@ -315,12 +315,12 @@ const itemss = [
           <h3 className="text-xl font-semibold text-[#343A40]">LinkedIn</h3>
         </div>
         <a
-          href="https://www.linkedin.com/in/your-linkedin-id"
+          href="www.linkedin.com/in/venu-wicaksono-2583352b1"
           target="_blank"
           rel="noopener noreferrer"
           className="text-[#0077b5] hover:underline"
         >
-          linkedin.com/in/your-linkedin-id
+          linkedin.com/in/venu-wicaksono-2583352b1
         </a>
       </div>
     ),
@@ -333,12 +333,12 @@ const itemss = [
           <h3 className="text-xl font-semibold text-[#343A40]">GitHub</h3>
         </div>
         <a
-          href="https://github.com/your-github-username"
+          href="https://github.com/gojo1180"
           target="_blank"
           rel="noopener noreferrer"
           className="text-[#333] hover:underline"
         >
-          github.com/your-github-username
+          github.com/gojo1180
         </a>
       </div>
     ),
@@ -351,10 +351,10 @@ const itemss = [
           <h3 className="text-xl font-semibold text-[#343A40]">Email</h3>
         </div>
         <a
-          href="mailto:yourname@example.com"
+          href="mailto:venuwicaksono@gmail.com"
           className="text-[#c71610] hover:underline"
         >
-          yourname@example.com
+          venuwicaksono@gmail.com
         </a>
       </div>
     ),
